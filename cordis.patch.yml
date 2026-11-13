@@ -1,0 +1,21 @@
+# Subagent Session Governor — bundle patch
+# 把本插件挂到 profile 的配置树里。安装由 plugin_manager install_bundle 完成，
+# 不要手工编辑 profile 的 package.json / cordis.patch.yml。
+- insert:
+    - id: subagent-governor
+      name: '@local/dsh-subagent-governor'
+      config:
+        maxTotal: 12
+        limitBehavior: ask
+        quotaEnabled: true
+        syncActiveCap: true
+        reuseCheck: enforce
+        strongThreshold: 0.6
+        candidateThreshold: 0.35
+        candidateLimit: 5
+        checkTtlMs: 900000
+        guardTools:
+          - subagent
+          - subagent_fork
+        queryTimeoutMs: 1500
+        injectHint: true
