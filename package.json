@@ -1,6 +1,6 @@
 {
   "name": "@local/dsh-subagent-governor",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Govern session subagents: count living and finished children against one configurable cap (ask or deny when reached) and reuse a finished child when the new task is similar enough.",
   "type": "module",
   "main": "index.mjs",
